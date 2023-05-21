@@ -5,9 +5,11 @@ import { UserController } from "controllers";
 import validate from "middlewares/validate";
 
 const router = Router();
-const { getUser } = UserController;
+const { getUser, findAllUser } = UserController;
 const { getUserValidation } = UserValidation;
+const { FIND_ALL, GET_USER } = USER_ROUTES;
 
-router.get(USER_ROUTES.GET_USER, validate(getUserValidation), getUser);
+router.get(GET_USER, validate(getUserValidation), getUser);
+router.get(FIND_ALL, findAllUser);
 
 export default router;

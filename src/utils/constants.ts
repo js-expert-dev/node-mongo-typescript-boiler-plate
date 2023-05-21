@@ -10,4 +10,5 @@ export const MAIN_ROUTES = {
 
 export const USER_ROUTES = {
   GET_USER: "/get",
+  FIND_ALL: "/all",
 };

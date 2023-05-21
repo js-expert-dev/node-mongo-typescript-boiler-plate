@@ -30,3 +30,16 @@ export const getUser = async (req: Request, res: Response) => {
     user,
   });
 };
+
+export const findAllUser = async (req: Request, res: Response) => {
+  // const { params } = req || {};
+  // const {} = (params as GetUserParamsType) || {};
+
+  const users = await UserService.findAll();
+
+  res.status(httpStatus.OK).json({
+    status: true,
+    message: `OK`,
+    users,
+  });
+};
